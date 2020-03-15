@@ -1,5 +1,5 @@
 {
-    "name": "@g43/utils",
+    "name": "@g43riko/gutils",
     "version": "0.0.1",
     "description": "Simple typescript util library",
     "scripts": {
@@ -7,7 +7,7 @@
         "build": "tsc",
         "test": "mocha -r ts-node/register src/**/*.spec.ts"
     },
-    "private": false,
+    "publishConfig": { "registry": "https://npm.pkg.github.com/" },
     "keywords": [
         "utils",
         "typescript",
