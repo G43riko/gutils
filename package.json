@@ -1,13 +1,13 @@
 {
-    "name": "gutils",
+    "name": "@g43/utils",
     "version": "0.0.1",
     "description": "Simple typescript util library",
-    "main": "index.js",
     "scripts": {
         "watch": "tsc --watch",
         "build": "tsc",
         "test": "mocha -r ts-node/register src/**/*.spec.ts"
     },
+    "private": false,
     "keywords": [
         "utils",
         "typescript",
@@ -15,6 +15,8 @@
     ],
     "author": "Gabriel Csollei",
     "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "dependencies": {
         "tslint": "^6.1.0",
         "typescript": "^3.8.3"

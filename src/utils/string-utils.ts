@@ -39,14 +39,6 @@ export function removeAccentedCharacters(word: string): string {
     });
 }
 
-export function join(data: string[], delimiter = " ", prefix = "", postfix = ""): string {
-    if (!Array.isArray(data)) {
-        return prefix + data + postfix;
-    }
-
-    return `${prefix}${data.join(delimiter)}${postfix}`;
-}
-
 export function toUpperSnakeCase(text: string): string {
     if (StringCheckers.isCamelCase(text)) {
         return text.replace(/([a-z])([A-Z])/g, "$1_$2")

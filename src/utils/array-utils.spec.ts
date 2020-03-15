@@ -41,7 +41,17 @@ describe("Array utils", () => {
             expect(ArrayUtils.join([], "-", "<<", ">>")).to.equal("<<>>");
             expect(ArrayUtils.join([], "/")).to.equal("");
         });
+
+        it("It should join string by delimiter and append prefix and postfix", () => {
+            const notArray: any[] | any = "gabriel";
+            const testCase              = ["hello", "my", "world"];
+            expect(ArrayUtils.join(notArray, "///", "<<", ">>")).to.equal("<<" + notArray + ">>");
+            expect(ArrayUtils.join(testCase, " ", "<<", ">>")).to.equal("<<hello my world>>");
+            expect(ArrayUtils.join([], "-", "<<", ">>")).to.equal("<<>>");
+            expect(ArrayUtils.join([], "/")).to.equal("");
+        });
     });
+
     describe("GetLast", () => {
         it("It return last element of array", () => {
             expect(ArrayUtils.getLast(notArray)).to.equal(notArray);
@@ -82,7 +92,7 @@ describe("Array utils", () => {
             expect(ArrayUtils.where(notArray, {})).to.deep.equal("gabriel");
             expect(ArrayUtils.where(notArray, {b: "bb"})).to.be.equal("gabriel");
             expect(ArrayUtils.where(testArray, {})).to.deep.equal([]);
-            expect(ArrayUtils.where(testArray, null)).to.deep.equal([]);
+            expect(ArrayUtils.where(testArray, null as any)).to.deep.equal([]);
             expect(ArrayUtils.where(testArray, {a: "aa"})).to.deep.equal([{a: "aa"}, {a: "aa", b: "bbb"}]);
             expect(ArrayUtils.where(testArray, {b: "bbb"})).to.deep.equal([{a: "aa", b: "bbb"}]);
         });

@@ -59,16 +59,6 @@ describe("StringUtils", () => {
             });
         });
     });
-    describe("Join", () => {
-        it("It should join string by delimiter and append prefix and postfix", () => {
-            const notArray: any[] | any = "gabriel";
-            const testCase              = ["hello", "my", "world"];
-            expect(StringUtils.join(notArray, "///", "<<", ">>")).to.equal("<<" + notArray + ">>");
-            expect(StringUtils.join(testCase, " ", "<<", ">>")).to.equal("<<hello my world>>");
-            expect(StringUtils.join([], "-", "<<", ">>")).to.equal("<<>>");
-            expect(StringUtils.join([], "/")).to.equal("");
-        });
-    });
     describe("RemoveAccented", () => {
         const notString: string | any = 23;
         const finalTestString         = testString + testString.toUpperCase();
@@ -124,7 +114,7 @@ b
     describe.skip("Template", () => {
         it("It should replace placeholders with values", () => {
             const params = {
-                age: "23",
+                age : "23",
                 name: "Gabo",
             };
             expect(StringUtils.template("{{name}} is {{age}} years old", params)).to.be.equal("Gabo je starý 23 rokov");
