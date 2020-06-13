@@ -169,8 +169,7 @@ export function collapseWhitespace(text: string): string {
 }
 
 export function capitalize(text: string): string {
-    return text.toLowerCase()
-               .replace(/^./, (char) => char.toUpperCase());
+    return text.toLowerCase().replace(/^./, (char) => char.toUpperCase());
 }
 
 export function isEmpty(thisArg: string): boolean {
@@ -267,4 +266,10 @@ function fuzzy_match_simple(pattern: string, str: string): boolean {
     }
 
     return patternLength !== 0 && strLength !== 0 && patternIdx === patternLength;
+}
+
+export function replaceForAll(template: string, values: string[], placeHolder: string): string[] {
+    return values.map((value) => {
+        return template.replace(placeHolder, value);
+    });
 }

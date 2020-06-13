@@ -8,6 +8,7 @@ export class GMap<T, S> extends Map<T, S> {
             return result;
         }
         this.set(key, defaultValue);
+
         return defaultValue;
     }
 }

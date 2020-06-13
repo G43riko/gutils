@@ -9,6 +9,12 @@ export function roundToDecimals(num: number, decimals = 2, type: "floor" | "ceil
     return (Math[type](num * divider) / divider).toFixed(decimals);
 }
 
+export function hash2Numbers(x: number, y: number): number {
+    const xFinal = x >= 0 ? x * 2 : -x * 2 - 1;
+    const yFinal = y >= 0 ? y * 2 : -y * 2 - 1;
+    return ((xFinal + yFinal) * (xFinal + yFinal + 1) / 2) + yFinal;
+}
+
 export function clamp(value: number, min: number, max: number): number {
     return Math.max(min, Math.min(value, max));
 }
@@ -64,6 +70,16 @@ export function average(args: number[]): number {
     return sum / args.length;
 }
 
+export function isPowerOf2(value: number): boolean {
+    return (value & (value - 1)) === 0;
+}
+
+
 export function diff(num1: number, num2: number): number {
     return Math.abs(num1 - num2);
+}
+
+const ratio = 180/Math.PI;
+export function toDegrees(radians: number): number {
+    return radians * ratio;
 }
