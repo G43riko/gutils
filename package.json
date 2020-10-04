@@ -4,7 +4,8 @@
     "description": "Simple typescript util library",
     "scripts": {
         "watch": "tsc --watch",
-        "build": "tsc",
+        "build": "tsc && npm run copy:modules",
+        "copy:modules": "ncp dist/modules docs",
         "test": "mocha -r ts-node/register src/**/*.spec.ts"
     },
     "publishConfig": { "registry": "https://npm.pkg.github.com/" },
